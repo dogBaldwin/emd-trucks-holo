@@ -1,0 +1,74 @@
+@name Blomberg A1A
+@model models/magtrainslocos/trucks/blomberg_b_rsg.mdl
+@persist A
+if(first() | dupefinished()){
+    
+#by railfolf (with modifications by doge [the baldwin one])
+#EMD's Blomberg A1A was EMD's standard passenger truck, used on many models from the earliest E units to the E9.
+#It was not succeeded by anything, as A1A passenger power died out in favor of B and C trucked equipment (SDP40F and F40PH.)
+
+FrameMat = "models/proppertextures/enamel_black" #The material of the frame.
+FrameColor = vec(255) #The color of the frame. Ignore for textures that don't change color.
+
+#End config.
+
+E = entity()
+E:setAlpha(0)
+BaseModel = "models/magtrainslocos/trucks/blomberg_b_rsg.mdl"
+noCollideAll(entity(),0)
+
+A=0
+
+A++
+holoCreate(A,E:toWorld(vec(0,27,0)),vec(1,1,1),E:toWorld(ang(0,0,0)),FrameColor,BaseModel)
+holoParent(A,E)
+holoClipEnabled(A,1,1)
+holoClip(A,1,vec(0,5,0),vec(0,1,0),0)
+holoEntity(A):setSubMaterial(2,FrameMat)
+
+A++
+holoCreate(A,E:toWorld(vec(0,37,0)),vec(1,1,1),E:toWorld(ang(0,0,0)),FrameColor,BaseModel)
+holoParent(A,E)
+holoClipEnabled(A,1,1)
+holoClipEnabled(A,2,1)
+holoClip(A,1,vec(0,-5,0),vec(0,-1,0),0)
+holoClip(A,2,vec(0,-13,0),vec(0,1,0),0)
+holoEntity(A):setSubMaterial(2,FrameMat)
+
+A++
+holoCreate(A,E:toWorld(vec(0,54,0)),vec(1,1,1),E:toWorld(ang(0,0,0)),FrameColor,BaseModel)
+holoParent(A,E)
+holoEntity(A):setSubMaterial(11,"null")
+holoClipEnabled(A,1,1)
+holoClipEnabled(A,2,1)
+holoClip(A,1,vec(0,-30,0),vec(0,-1,0),0)
+holoClip(A,2,vec(0,-54,0),vec(0,1,0),0)
+holoEntity(A):setSubMaterial(2,FrameMat)
+
+A++
+holoCreate(A,E:toWorld(vec(0,-54,0)),vec(1,1,1),E:toWorld(ang(0,180,0)),FrameColor,BaseModel)
+holoParent(A,E)
+holoEntity(A):setSubMaterial(11,"null")
+holoClipEnabled(A,1,1)
+holoClipEnabled(A,2,1)
+holoClip(A,1,vec(0,-30,0),vec(0,-1,0),0)
+holoClip(A,2,vec(0,-54,0),vec(0,1,0),0)
+holoEntity(A):setSubMaterial(2,FrameMat)
+
+A++
+holoCreate(A,E:toWorld(vec(0,-37,0)),vec(1,1,1),E:toWorld(ang(0,180,0)),FrameColor,BaseModel)
+holoParent(A,E)
+holoClipEnabled(A,1,1)
+holoClipEnabled(A,2,1)
+holoClip(A,1,vec(0,-5,0),vec(0,-1,0),0)
+holoClip(A,2,vec(0,-13,0),vec(0,1,0),0)
+holoEntity(A):setSubMaterial(2,FrameMat)
+
+A++
+holoCreate(A,E:toWorld(vec(0,-27,0)),vec(1,1,1),E:toWorld(ang(0,180,0)),FrameColor,BaseModel)
+holoParent(A,E)
+holoClipEnabled(A,1,1)
+holoClip(A,1,vec(0,5,0),vec(0,1,0),0)
+holoEntity(A):setSubMaterial(2,FrameMat)
+
+}
