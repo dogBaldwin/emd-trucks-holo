@@ -44,10 +44,12 @@ holoEntity(A):setSubMaterial(3,"models/proppertextures/invisible")
 holoBodygroup(A,0,1)
 
 A++
-holoCreate(A,E:toWorld(vec(0,84,-23.5)),vec(1,1.05,1.05),E:toWorld(ang(0,0,0)),FrameColor,"models/lazpack/detail/tractionmotorkit.mdl")
+holoCreate(A,E:toWorld(vec(0,84,-23.5)),vec(1,1.05,1.05),E:toWorld(ang(0,180,0)),FrameColor,"models/lazpack/detail/tractionmotorkit.mdl")
 holoParent(A,E)
 holoEntity(A):setSubMaterial(3,"models/proppertextures/invisible")
 holoBodygroup(A,0,1)
+holoClipEnabled(A,1,1)
+holoClip(A,1,vec(0,-35,0),vec(0,1,0),0)
 
 #Sideframe Side A
 A++
