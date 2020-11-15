@@ -10,76 +10,44 @@ if(first()|dupefinished()){
     
 FrameMat = "models/proppertextures/enamel_black" #Side frame texture.
 FrameColor = vec(255) #Side frame color.
+
+Wheels = 1 #Turns wheel holos off/on.
     
 E = entity()
 A = 0
 E:setAlpha(0)
 noCollideAll(entity(),0)
 
-
-#Wheels
+if(Wheels>0){
 A++
-holoCreate(A,E:toWorld(vec(0,0,-23.5)),vec(1.05263157895,1,1.05263157895),E:toWorld(ang(0,90,0)),FrameColor,"models/bobsters_trains_2/wheels/standard/double_38.mdl")
+holoCreate(A,E:toWorld(vec(0,0,-23.5)),vec(1),E:toWorld(ang(0,0,0)),FrameColor,"models/anytrains/props/locoparts/axle_40_rsg.mdl")
 holoParent(A,E)
-holoBodygroup(A,2,6)
-holoEntity(A):setSubMaterial(3,"models/proppertextures/wheel")
 
 A++
-holoCreate(A,E:toWorld(vec(0,0,-23.5)),vec(0.8,0.8,7),E:toWorld(ang(-90,0,0)),FrameColor,"hq_cylinder")
+holoCreate(A,E:toWorld(vec(0,-84,-23.5)),vec(1),E:toWorld(ang(0,0,0)),FrameColor,"models/anytrains/props/locoparts/axle_40_rsg.mdl")
 holoParent(A,E)
-holoMaterial(A,"models/proppertextures/wheel")
 
 A++
-holoCreate(A,E:toWorld(vec(30,0,-23.5)),vec(3,3,0.25),E:toWorld(ang(90,0,0)),FrameColor,"hq_cylinder")
+holoCreate(A,E:toWorld(vec(0,84,-23.5)),vec(1),E:toWorld(ang(0,0,0)),FrameColor,"models/anytrains/props/locoparts/axle_40_rsg.mdl")
 holoParent(A,E)
-holoMaterial(A,"models/proppertextures/wheel_inner")
+}
+A++
+holoCreate(A,E:toWorld(vec(0,-84,-23.5)),vec(1,1.05,1.05),E:toWorld(ang(0,180,0)),FrameColor,"models/lazpack/detail/tractionmotorkit.mdl")
+holoParent(A,E)
+holoEntity(A):setSubMaterial(3,"models/proppertextures/invisible")
+holoBodygroup(A,0,1)
 
 A++
-holoCreate(A,E:toWorld(vec(-30,0,-23.5)),vec(3,3,0.25),E:toWorld(ang(-90,0,0)),FrameColor,"hq_cylinder")
+holoCreate(A,E:toWorld(vec(0,0,-23.5)),vec(1,1.05,1.05),E:toWorld(ang(0,180,0)),FrameColor,"models/lazpack/detail/tractionmotorkit.mdl")
 holoParent(A,E)
-holoMaterial(A,"models/proppertextures/wheel_inner")
+holoEntity(A):setSubMaterial(3,"models/proppertextures/invisible")
+holoBodygroup(A,0,1)
 
 A++
-holoCreate(A,E:toWorld(vec(0,-84,-23.5)),vec(1.05263157895,1,1.05263157895),E:toWorld(ang(0,90,0)),FrameColor,"models/bobsters_trains_2/wheels/standard/double_38.mdl")
+holoCreate(A,E:toWorld(vec(0,84,-23.5)),vec(1,1.05,1.05),E:toWorld(ang(0,0,0)),FrameColor,"models/lazpack/detail/tractionmotorkit.mdl")
 holoParent(A,E)
-holoBodygroup(A,2,6)
-holoEntity(A):setSubMaterial(3,"models/proppertextures/wheel")
-
-A++
-holoCreate(A,E:toWorld(vec(30,-84,-23.5)),vec(3,3,0.25),E:toWorld(ang(90,0,0)),FrameColor,"hq_cylinder")
-holoParent(A,E)
-holoMaterial(A,"models/proppertextures/wheel_inner")
-
-A++
-holoCreate(A,E:toWorld(vec(0,-84,-23.5)),vec(0.8,0.8,7),E:toWorld(ang(-90,0,0)),FrameColor,"hq_cylinder")
-holoParent(A,E)
-holoMaterial(A,"models/proppertextures/wheel")
-
-A++
-holoCreate(A,E:toWorld(vec(-30,-84,-23.5)),vec(3,3,0.25),E:toWorld(ang(-90,0,0)),FrameColor,"hq_cylinder")
-holoParent(A,E)
-holoMaterial(A,"models/proppertextures/wheel_inner")
-
-A++
-holoCreate(A,E:toWorld(vec(0,84,-23.5)),vec(1.05263157895,1,1.05263157895),E:toWorld(ang(0,90,0)),FrameColor,"models/bobsters_trains_2/wheels/standard/double_38.mdl")
-holoParent(A,E)
-holoBodygroup(A,2,6)
-holoEntity(A):setSubMaterial(3,"models/proppertextures/wheel")
-
-A++
-holoCreate(A,E:toWorld(vec(0,84,-23.5)),vec(0.8,0.8,7),E:toWorld(ang(-90,0,0)),FrameColor,"hq_cylinder")
-holoParent(A,E)
-holoMaterial(A,"models/proppertextures/wheel")
-
-A++
-holoCreate(A,E:toWorld(vec(30,84,-23.5)),vec(3,3,0.25),E:toWorld(ang(90,0,0)),FrameColor,"hq_cylinder")
-holoParent(A,E)
-holoMaterial(A,"models/proppertextures/wheel_inner")
-
-A++
-holoCreate(A,E:toWorld(vec(-30,84,-23.5)),vec(3,3,0.25),E:toWorld(ang(-90,0,0)),FrameColor,"hq_cylinder")
-holoParent(A,E)
-holoMaterial(A,"models/proppertextures/wheel_inner")
+holoEntity(A):setSubMaterial(3,"models/proppertextures/invisible")
+holoBodygroup(A,0,1)
 
 #Sideframe Side A
 A++
@@ -139,55 +107,6 @@ holoEntity(A):setSubMaterial(5,"models/proppertextures/invisible")
 holoEntity(A):setSubMaterial(6,"models/proppertextures/invisible")
 holoEntity(A):setSubMaterial(7,"models/proppertextures/invisible")
 holoEntity(A):setSubMaterial(8,"models/proppertextures/invisible")
-
-#Traction Motors
-A++
-holoCreate(A,E:toWorld(vec(0,-30,3)),vec(1,1,1),E:toWorld(ang(0,0,0)),FrameColor,"models/magtrainslocos/trucks/blomberg_m_phx.mdl")
-holoParent(A,E)
-holoClipEnabled(A,1,1)
-holoClip(A,1,vec(0,0,0),vec(0,-90,0),0)
-holoEntity(A):setSubMaterial(1,"models/proppertextures/invisible")
-holoEntity(A):setSubMaterial(2,"models/proppertextures/invisible")
-holoEntity(A):setSubMaterial(3,"models/proppertextures/invisible")
-holoEntity(A):setSubMaterial(4,"models/proppertextures/invisible")
-holoEntity(A):setSubMaterial(5,"models/proppertextures/invisible")
-holoEntity(A):setSubMaterial(6,"models/proppertextures/invisible")
-holoEntity(A):setSubMaterial(7,"models/proppertextures/invisible")
-holoEntity(A):setSubMaterial(8,"models/proppertextures/invisible")
-holoEntity(A):setSubMaterial(9,"models/proppertextures/invisible")
-holoEntity(A):setSubMaterial(10,"models/proppertextures/invisible")
-
-A++
-holoCreate(A,E:toWorld(vec(0,54,3)),vec(1,1,1),E:toWorld(ang(0,0,0)),FrameColor,"models/magtrainslocos/trucks/blomberg_m_phx.mdl")
-holoParent(A,E)
-holoClipEnabled(A,1,1)
-holoClip(A,1,vec(0,0,0),vec(0,-90,0),0)
-holoEntity(A):setSubMaterial(1,"models/proppertextures/invisible")
-holoEntity(A):setSubMaterial(2,"models/proppertextures/invisible")
-holoEntity(A):setSubMaterial(3,"models/proppertextures/invisible")
-holoEntity(A):setSubMaterial(4,"models/proppertextures/invisible")
-holoEntity(A):setSubMaterial(5,"models/proppertextures/invisible")
-holoEntity(A):setSubMaterial(6,"models/proppertextures/invisible")
-holoEntity(A):setSubMaterial(7,"models/proppertextures/invisible")
-holoEntity(A):setSubMaterial(8,"models/proppertextures/invisible")
-holoEntity(A):setSubMaterial(9,"models/proppertextures/invisible")
-holoEntity(A):setSubMaterial(10,"models/proppertextures/invisible") 
-
-A++
-holoCreate(A,E:toWorld(vec(0,138,3)),vec(1,1,1),E:toWorld(ang(0,0,0)),FrameColor,"models/magtrainslocos/trucks/blomberg_m_phx.mdl")
-holoParent(A,E)
-holoClipEnabled(A,1,1)
-holoClip(A,1,vec(0,0,0),vec(0,-90,0),0)
-holoEntity(A):setSubMaterial(1,"models/proppertextures/invisible")
-holoEntity(A):setSubMaterial(2,"models/proppertextures/invisible")
-holoEntity(A):setSubMaterial(3,"models/proppertextures/invisible")
-holoEntity(A):setSubMaterial(4,"models/proppertextures/invisible")
-holoEntity(A):setSubMaterial(5,"models/proppertextures/invisible")
-holoEntity(A):setSubMaterial(6,"models/proppertextures/invisible")
-holoEntity(A):setSubMaterial(7,"models/proppertextures/invisible")
-holoEntity(A):setSubMaterial(8,"models/proppertextures/invisible")
-holoEntity(A):setSubMaterial(9,"models/proppertextures/invisible")
-holoEntity(A):setSubMaterial(10,"models/proppertextures/invisible") 
 
 #Bearings and associated details (HYATT)
 A++

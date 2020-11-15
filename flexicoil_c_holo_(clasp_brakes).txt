@@ -1,10 +1,10 @@
-@name HTC
+@name Flexicoil C Holo (Clasp Brakes)
 @model models/lazpack/trucks/commonwealth_a1a_long.mdl
 @persist A E:entity FrameMat:string FrameColor:vector
 
 #by doge (the baldwin one)
-#The HTC was EMD's replacement for the Flexicoil truck, which was very similar structurally to the Flexicoil. It was in use from the -2 line to the SD60.
-#This is the standard version.
+#EMD used the Flexicoil as their standard freight truck from the introduction of the SD to the -2 series.
+#This version is the clasp brake version, as well as the early (SD7/9) version.
 
 if(first()|dupefinished()){
     
@@ -18,6 +18,7 @@ A = 0
 E:setAlpha(0)
 noCollideAll(entity(),0)
 
+##Wheels/Traction Motors
 if(Wheels>0){
 A++
 holoCreate(A,E:toWorld(vec(0,0,-23.5)),vec(1),E:toWorld(ang(0,0,0)),FrameColor,"models/anytrains/props/locoparts/axle_40_rsg.mdl")
@@ -325,6 +326,18 @@ holoEntity(A):setSubMaterial(1,"models/proppertextures/wheel")
 holoEntity(A):setSubMaterial(2,FrameMat)
 
 A++
+holoCreate(A,E:toWorld(vec(29.6,109.8,-8)),vec(1,0.8,1.1),E:toWorld(ang(0,0,0)),FrameColor,"models/unionslocos/parts/brake_kit_1f.mdl")
+holoParent(A,E)
+holoEntity(A):setSubMaterial(1,FrameMat)
+holoEntity(A):setSubMaterial(2,"models/proppertextures/wheel")
+
+A++
+holoCreate(A,E:toWorld(vec(29.6,82,-38)),vec(0.17,1.4,0.2),E:toWorld(ang(0,0,0)),FrameColor,"models/mechanics/solid_steel/sheetmetal_box_4.mdl")
+holoParent(A,E)
+holoEntity(A):setSubMaterial(1,FrameMat)
+holoEntity(A):setSubMaterial(2,"models/proppertextures/wheel")
+
+A++
 holoCreate(A,E:toWorld(vec(50,-84,-5)),vec(0.8,0.8,0.9),E:toWorld(ang(0,180,0)),FrameColor,"models/unionslocos/parts/brake_kit_1a.mdl")
 holoParent(A,E)
 holoEntity(A):setSubMaterial(1,FrameMat)
@@ -350,6 +363,19 @@ holoCreate(A,E:toWorld(vec(29.6,-59,-8)),vec(1,0.8,1.1),E:toWorld(ang(0,180,0)),
 holoParent(A,E)
 holoEntity(A):setSubMaterial(1,"models/proppertextures/wheel")
 holoEntity(A):setSubMaterial(2,FrameMat)
+
+A++
+holoCreate(A,E:toWorld(vec(29.6,-109.8,-8)),vec(1,0.8,1.1),E:toWorld(ang(0,180,0)),FrameColor,"models/unionslocos/parts/brake_kit_1f.mdl")
+holoParent(A,E)
+holoEntity(A):setSubMaterial(1,FrameMat)
+holoEntity(A):setSubMaterial(2,"models/proppertextures/wheel")
+
+A++
+holoCreate(A,E:toWorld(vec(29.6,-82,-38)),vec(0.17,1.4,0.2),E:toWorld(ang(0,0,0)),FrameColor,"models/mechanics/solid_steel/sheetmetal_box_4.mdl")
+holoParent(A,E)
+holoEntity(A):setSubMaterial(1,FrameMat)
+holoEntity(A):setSubMaterial(2,"models/proppertextures/wheel")
+
 A++
 holoCreate(A,E:toWorld(vec(-50,84,-5)),vec(0.8,0.8,0.9),E:toWorld(ang(0,0,0)),FrameColor,"models/unionslocos/parts/brake_kit_1a.mdl")
 holoParent(A,E)
@@ -377,6 +403,18 @@ holoParent(A,E)
 holoEntity(A):setSubMaterial(1,"models/proppertextures/wheel")
 holoEntity(A):setSubMaterial(2,FrameMat)
 
+A++
+holoCreate(A,E:toWorld(vec(-29.6,109.8,-8)),vec(1,0.8,1.1),E:toWorld(ang(0,0,0)),FrameColor,"models/unionslocos/parts/brake_kit_1f.mdl")
+holoParent(A,E)
+holoEntity(A):setSubMaterial(1,FrameMat)
+holoEntity(A):setSubMaterial(2,"models/proppertextures/wheel")
+
+A++
+holoCreate(A,E:toWorld(vec(-29.6,82,-38)),vec(0.17,1.4,0.2),E:toWorld(ang(0,0,0)),FrameColor,"models/mechanics/solid_steel/sheetmetal_box_4.mdl")
+holoParent(A,E)
+holoEntity(A):setSubMaterial(1,FrameMat)
+holoEntity(A):setSubMaterial(2,"models/proppertextures/wheel")
+
 #Ignore this. It's just to prevent FPS destruction upon spawning.
 timer("load",1000)
 }
@@ -384,31 +422,28 @@ timer("load",1000)
 if(clk("load")){
 
 A++
-holoCreate(A,E:toWorld(vec(-29.6,42.5,-38)),vec(1,1.25,1),E:toWorld(ang(0,0,0)),FrameColor,"models/unionslocos/parts/brake_kit_1e.mdl")
+holoCreate(A,E:toWorld(vec(-50,0,-5)),vec(0.8,0.8,0.9),E:toWorld(ang(0,0,0)),FrameColor,"models/unionslocos/parts/brake_kit_1a.mdl")
 holoParent(A,E)
 holoEntity(A):setSubMaterial(1,FrameMat)
-holoEntity(A):setSubMaterial(2,"models/proppertextures/wheel")
+holoEntity(A):setSubMaterial(2,FrameMat)
 
 A++
-holoCreate(A,E:toWorld(vec(29.6,42.5,-38)),vec(1,1.25,1),E:toWorld(ang(0,0,0)),FrameColor,"models/unionslocos/parts/brake_kit_1e.mdl")
+holoCreate(A,E:toWorld(vec(-50,-12,-5)),vec(0.8,0.5,0.9),E:toWorld(ang(90,0,0)),FrameColor,"models/unionslocos/parts/brake_kit_1b.mdl")
 holoParent(A,E)
 holoEntity(A):setSubMaterial(1,FrameMat)
-holoEntity(A):setSubMaterial(2,"models/proppertextures/wheel")
 
 A++
-holoCreate(A,E:toWorld(vec(-29.6,-42.5,-36)),vec(1,1.25,1),E:toWorld(ang(0,0,10)),FrameColor,"models/unionslocos/parts/brake_kit_1e.mdl")
+holoCreate(A,E:toWorld(vec(-39,-25,-5)),vec(1,0.9,0.5),E:toWorld(ang(0,0,90)),FrameColor,"models/unionslocos/parts/brake_kit_1c.mdl")
 holoParent(A,E)
 holoEntity(A):setSubMaterial(1,FrameMat)
-holoEntity(A):setSubMaterial(2,"models/proppertextures/wheel")
 
 A++
-holoCreate(A,E:toWorld(vec(29.6,-42.5,-36)),vec(1,1.25,1),E:toWorld(ang(0,0,10)),FrameColor,"models/unionslocos/parts/brake_kit_1e.mdl")
+holoCreate(A,E:toWorld(vec(-41,-25,-6)),vec(0.4),E:toWorld(ang(0,0,0)),FrameColor,"hq_cylinder")
 holoParent(A,E)
 holoEntity(A):setSubMaterial(1,FrameMat)
-holoEntity(A):setSubMaterial(2,"models/proppertextures/wheel")
 
 A++
-holoCreate(A,E:toWorld(vec(-29.6,-25,-8)),vec(1,0.8,0.9),E:toWorld(ang(0,0,-3)),FrameColor,"models/unionslocos/parts/brake_kit_1d.mdl")
+holoCreate(A,E:toWorld(vec(-29.6,-25,-8)),vec(1,0.8,1.1),E:toWorld(ang(0,0,0)),FrameColor,"models/unionslocos/parts/brake_kit_1d.mdl")
 holoParent(A,E)
 holoEntity(A):setSubMaterial(1,"models/proppertextures/wheel")
 holoEntity(A):setSubMaterial(2,FrameMat)
@@ -420,7 +455,34 @@ holoEntity(A):setSubMaterial(1,FrameMat)
 holoEntity(A):setSubMaterial(2,"models/proppertextures/wheel")
 
 A++
-holoCreate(A,E:toWorld(vec(29.6,-25,-8)),vec(1,0.8,0.9),E:toWorld(ang(0,0,-3)),FrameColor,"models/unionslocos/parts/brake_kit_1d.mdl")
+holoCreate(A,E:toWorld(vec(-29.6,-2,-38)),vec(0.17,1.4,0.2),E:toWorld(ang(0,0,0)),FrameColor,"models/mechanics/solid_steel/sheetmetal_box_4.mdl")
+holoParent(A,E)
+holoEntity(A):setSubMaterial(1,FrameMat)
+holoEntity(A):setSubMaterial(2,"models/proppertextures/wheel")
+
+A++
+holoCreate(A,E:toWorld(vec(50,0,-5)),vec(0.8,0.8,0.9),E:toWorld(ang(0,0,0)),FrameColor,"models/unionslocos/parts/brake_kit_1a.mdl")
+holoParent(A,E)
+holoEntity(A):setSubMaterial(1,FrameMat)
+holoEntity(A):setSubMaterial(2,FrameMat)
+
+A++
+holoCreate(A,E:toWorld(vec(50,-12,-5)),vec(0.8,0.5,0.9),E:toWorld(ang(90,0,0)),FrameColor,"models/unionslocos/parts/brake_kit_1b.mdl")
+holoParent(A,E)
+holoEntity(A):setSubMaterial(1,FrameMat)
+
+A++
+holoCreate(A,E:toWorld(vec(39,-25,-5)),vec(1,0.9,0.5),E:toWorld(ang(0,180,-90)),FrameColor,"models/unionslocos/parts/brake_kit_1c.mdl")
+holoParent(A,E)
+holoEntity(A):setSubMaterial(1,FrameMat)
+
+A++
+holoCreate(A,E:toWorld(vec(41,-25,-6)),vec(0.4),E:toWorld(ang(0,0,0)),FrameColor,"hq_cylinder")
+holoParent(A,E)
+holoEntity(A):setSubMaterial(1,FrameMat)
+
+A++
+holoCreate(A,E:toWorld(vec(29.6,-25,-8)),vec(1,0.8,1.1),E:toWorld(ang(0,0,0)),FrameColor,"models/unionslocos/parts/brake_kit_1d.mdl")
 holoParent(A,E)
 holoEntity(A):setSubMaterial(1,"models/proppertextures/wheel")
 holoEntity(A):setSubMaterial(2,FrameMat)
@@ -430,23 +492,18 @@ holoCreate(A,E:toWorld(vec(29.6,25.8,-8)),vec(1,0.8,1.1),E:toWorld(ang(0,0,0)),F
 holoParent(A,E)
 holoEntity(A):setSubMaterial(1,FrameMat)
 holoEntity(A):setSubMaterial(2,"models/proppertextures/wheel")
+    
+A++
+holoCreate(A,E:toWorld(vec(29.6,-2,-38)),vec(0.17,1.4,0.2),E:toWorld(ang(0,0,0)),FrameColor,"models/mechanics/solid_steel/sheetmetal_box_4.mdl")
+holoParent(A,E)
+holoEntity(A):setSubMaterial(1,FrameMat)
+holoEntity(A):setSubMaterial(2,"models/proppertextures/wheel")
+
 timer("load2",1000)
 }
 
 if(clk("load2")){
-
-A++
-holoCreate(A,E:toWorld(vec(-42,0,-26)),vec(0.2,0.2,14),E:toWorld(ang(0,0,90)),FrameColor,"cylinder")
-holoParent(A,E)
-holoEntity(A):setSubMaterial(1,FrameMat)
-holoEntity(A):setSubMaterial(2,FrameMat)
-
-A++
-holoCreate(A,E:toWorld(vec(42,0,-26)),vec(0.2,0.2,14),E:toWorld(ang(0,0,90)),FrameColor,"cylinder")
-holoParent(A,E)
-holoEntity(A):setSubMaterial(1,FrameMat)
-holoEntity(A):setSubMaterial(2,FrameMat)
-
+    
 A++
 holoCreate(A,E:toWorld(vec(-50,-84,-4)),vec(0.8,0.8,0.9),E:toWorld(ang(0,180,0)),FrameColor,"models/unionslocos/parts/brake_kit_1a.mdl")
 holoParent(A,E)
@@ -475,40 +532,15 @@ holoEntity(A):setSubMaterial(1,"models/proppertextures/wheel")
 holoEntity(A):setSubMaterial(2,FrameMat)
 
 A++
-holoCreate(A,E:toWorld(vec(-25,101,-11)),vec(3.2,3.2,0.85),E:toWorld(ang(0,180,0)),FrameColor,"hq_tube")
+holoCreate(A,E:toWorld(vec(-29.6,-109.8,-8)),vec(1,0.8,1.1),E:toWorld(ang(0,180,0)),FrameColor,"models/unionslocos/parts/brake_kit_1f.mdl")
 holoParent(A,E)
 holoEntity(A):setSubMaterial(1,FrameMat)
-holoClipEnabled(A,1,1)
-holoClip(A,1,vec(0,0,0),vec(1,0,0),0)
-holoClipEnabled(A,2,1)
-holoClip(A,2,vec(0,4,0),vec(0,-1,0),0)
+holoEntity(A):setSubMaterial(2,"models/proppertextures/wheel")
 
 A++
-holoCreate(A,E:toWorld(vec(25,101,-11)),vec(3.2,3.2,0.85),E:toWorld(ang(0,180,0)),FrameColor,"hq_tube")
+holoCreate(A,E:toWorld(vec(-29.6,-82,-38)),vec(0.17,1.4,0.2),E:toWorld(ang(0,0,0)),FrameColor,"models/mechanics/solid_steel/sheetmetal_box_4.mdl")
 holoParent(A,E)
 holoEntity(A):setSubMaterial(1,FrameMat)
-holoClipEnabled(A,1,1)
-holoClip(A,1,vec(0,0,0),vec(-1,0,0),0)
-holoClipEnabled(A,2,1)
-holoClip(A,2,vec(0,4,0),vec(0,-1,0),0)
+holoEntity(A):setSubMaterial(2,"models/proppertextures/wheel")
 
-A++
-holoCreate(A,E:toWorld(vec(0,117.83,-11)),vec(4.2,0.4,0.85),E:toWorld(ang(0,180,0)),FrameColor,"cube")
-holoParent(A,E)
-holoEntity(A):setSubMaterial(1,FrameMat)
-
-A++
-holoCreate(A,E:toWorld(vec(0,117.83,-19)),vec(2.2,0.4,1.85),E:toWorld(ang(0,180,0)),FrameColor,"cube")
-holoParent(A,E)
-holoEntity(A):setSubMaterial(1,FrameMat)
-
-A++
-holoCreate(A,E:toWorld(vec(48,0,-13)),vec(1,0.9,1),E:toWorld(ang(0,90,82)),FrameColor,"models/unionslocos/parts/brake_kit_1e.mdl")
-holoParent(A,E)
-holoEntity(A):setSubMaterial(1,FrameMat)
-
-A++
-holoCreate(A,E:toWorld(vec(-48,0,-13)),vec(1,0.9,1),E:toWorld(ang(0,90,98)),FrameColor,"models/unionslocos/parts/brake_kit_1e.mdl")
-holoParent(A,E)
-holoEntity(A):setSubMaterial(1,FrameMat)
 }

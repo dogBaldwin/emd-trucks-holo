@@ -23,6 +23,8 @@ if(first() | dupefinished()){       #Ignore this. It's to prevent errors on spaw
 
     FrameMat = "models/proppertextures/enamel_black"  #Side frame material.
     FrameColor = vec(255) #Side frame color.
+    
+    Wheels = 1 #Turns wheel holos off/on.
 
 E=entity()
 E:setAlpha(0)
@@ -99,91 +101,27 @@ holoClipEnabled(A,2,1)
 holoClip(A,2,vec(120,0,0),vec(-1,0,0),0)
 holoClipEnabled(A,3,1)
 holoClip(A,3,vec(0,120,0),vec(0,-1,0),0)
-
+if(Wheels>0){
 A++
-holoCreate(A,E:toWorld(vec(0,96,0)),vec(1.05263157895,1,1.05263157895),E:toWorld(ang(0,90,0)),FrameColor,"models/bobsters_trains_2/wheels/standard/double_38.mdl")
+holoCreate(A,E:toWorld(vec(0,96,0)),vec(1),E:toWorld(ang(0,0,0)),FrameColor,"models/anytrains/props/locoparts/axle_40_rsg.mdl")
 holoParent(A,E)
-holoBodygroup(A,2,6)
 holoEntity(A):setSubMaterial(3,"models/proppertextures/wheel")
 
 A++
-holoCreate(A,E:toWorld(vec(0,96,0)),vec(0.7,0.7,7),E:toWorld(ang(-90,0,0)),FrameColor,"hq_cylinder")
+holoCreate(A,E:toWorld(vec(0,32,0)),vec(1),E:toWorld(ang(0,0,0)),FrameColor,"models/anytrains/props/locoparts/axle_40_rsg.mdl")
 holoParent(A,E)
-holoMaterial(A,"models/proppertextures/wheel")
-
-A++
-holoCreate(A,E:toWorld(vec(30,96,0)),vec(3,3,0.25),E:toWorld(ang(90,0,0)),FrameColor,"hq_cylinder")
-holoParent(A,E)
-holoMaterial(A,"models/proppertextures/wheel_inner")
-
-A++
-holoCreate(A,E:toWorld(vec(-30,96,0)),vec(3,3,0.25),E:toWorld(ang(-90,0,0)),FrameColor,"hq_cylinder")
-holoParent(A,E)
-holoMaterial(A,"models/proppertextures/wheel_inner")
-
-A++
-holoCreate(A,E:toWorld(vec(0,32,0)),vec(1.05263157895,1,1.05263157895),E:toWorld(ang(0,90,0)),FrameColor,"models/bobsters_trains_2/wheels/standard/double_38.mdl")
-holoParent(A,E)
-holoBodygroup(A,2,6)
 holoEntity(A):setSubMaterial(3,"models/proppertextures/wheel")
 
 A++
-holoCreate(A,E:toWorld(vec(0,32,0)),vec(0.7,0.7,7),E:toWorld(ang(-90,0,0)),FrameColor,"hq_cylinder")
+holoCreate(A,E:toWorld(vec(0,-32,0)),vec(1),E:toWorld(ang(0,0,0)),FrameColor,"models/anytrains/props/locoparts/axle_40_rsg.mdl")
 holoParent(A,E)
-holoMaterial(A,"models/proppertextures/wheel")
-
-A++
-holoCreate(A,E:toWorld(vec(30,32,0)),vec(3,3,0.25),E:toWorld(ang(90,0,0)),FrameColor,"hq_cylinder")
-holoParent(A,E)
-holoMaterial(A,"models/proppertextures/wheel_inner")
-
-A++
-holoCreate(A,E:toWorld(vec(-30,32,0)),vec(3,3,0.25),E:toWorld(ang(-90,0,0)),FrameColor,"hq_cylinder")
-holoParent(A,E)
-holoMaterial(A,"models/proppertextures/wheel_inner")
-
-A++
-holoCreate(A,E:toWorld(vec(0,-32,0)),vec(1.05263157895,1,1.05263157895),E:toWorld(ang(0,90,0)),FrameColor,"models/bobsters_trains_2/wheels/standard/double_38.mdl")
-holoParent(A,E)
-holoBodygroup(A,2,6)
 holoEntity(A):setSubMaterial(3,"models/proppertextures/wheel")
 
 A++
-holoCreate(A,E:toWorld(vec(0,-32,0)),vec(0.7,0.7,7),E:toWorld(ang(-90,0,0)),FrameColor,"hq_cylinder")
+holoCreate(A,E:toWorld(vec(0,-96,0)),vec(1),E:toWorld(ang(0,0,0)),FrameColor,"models/anytrains/props/locoparts/axle_40_rsg.mdl")
 holoParent(A,E)
-holoMaterial(A,"models/proppertextures/wheel")
-
-A++
-holoCreate(A,E:toWorld(vec(30,-32,0)),vec(3,3,0.25),E:toWorld(ang(90,0,0)),FrameColor,"hq_cylinder")
-holoParent(A,E)
-holoMaterial(A,"models/proppertextures/wheel_inner")
-
-A++
-holoCreate(A,E:toWorld(vec(-30,-32,0)),vec(3,3,0.25),E:toWorld(ang(-90,0,0)),FrameColor,"hq_cylinder")
-holoParent(A,E)
-holoMaterial(A,"models/proppertextures/wheel_inner")
-
-A++
-holoCreate(A,E:toWorld(vec(0,-96,0)),vec(1.05263157895,1,1.05263157895),E:toWorld(ang(0,90,0)),FrameColor,"models/bobsters_trains_2/wheels/standard/double_38.mdl")
-holoParent(A,E)
-holoBodygroup(A,2,6)
 holoEntity(A):setSubMaterial(3,"models/proppertextures/wheel")
-
-A++
-holoCreate(A,E:toWorld(vec(0,-96,0)),vec(0.7,0.7,7),E:toWorld(ang(-90,0,0)),FrameColor,"hq_cylinder")
-holoParent(A,E)
-holoMaterial(A,"models/proppertextures/wheel")
-
-A++
-holoCreate(A,E:toWorld(vec(30,-96,0)),vec(3,3,0.25),E:toWorld(ang(90,0,0)),FrameColor,"hq_cylinder")
-holoParent(A,E)
-holoMaterial(A,"models/proppertextures/wheel_inner")
-
-A++
-holoCreate(A,E:toWorld(vec(-30,-96,0)),vec(3,3,0.25),E:toWorld(ang(-90,0,0)),FrameColor,"hq_cylinder")
-holoParent(A,E)
-holoMaterial(A,"models/proppertextures/wheel_inner")
-
+}
 A++
 holoCreate(A,E:toWorld(vec(0,-96,0)),vec(1),E:toWorld(ang(0,180,0)),FrameColor,"models/lazpack/detail/tractionmotorkit.mdl")
 holoParent(A,E)

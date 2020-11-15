@@ -1,6 +1,6 @@
-@name Flexicoil B
+@name Flexicoil B (PHX)
 @persist Base:entity
-@model models/monkatraztrainprops/trucks/aar_type_a.mdl
+@model models/monkatraztrainprops/trucks/aar_type_a_phxgauge.mdl
 if(first() | dupefinished()){
     
 #by doge (the baldwin one)
@@ -14,14 +14,14 @@ Wheels = 1 #Wheels on/off.
 
 Base=entity()
 Base:setMaterial("magtrains/invisible")
-noCollideAll(entity(),0)
+noCollideAll(entity(),0) 
     
 A=0
 
 #truck 1
 
 A++
-holoCreate(A,Base:toWorld(vec(0,-9,18)),vec(1.1,1,1.1),Base:toWorld(ang(0,-90,0)),FrameColor,"models/bogies/bogie_clyde_hiad_tp3.mdl")
+holoCreate(A,Base:toWorld(vec(0,-9,18)),vec(1.1,1,1.1),Base:toWorld(ang(0,-90,0)),FrameColor,"models/bogies/bogie_clyde_hiad_phx.mdl")
 holoParent(A,Base)
 holoEntity(A):setSubMaterial(1,FrameMat)  
 holoBodygroup(A,1,1)
@@ -33,7 +33,7 @@ holoClipEnabled(A,2,1)
 holoClip(A,2,vec(0,24,0),vec(0,1,0),0)
 
 A++
-holoCreate(A,Base:toWorld(vec(0,9,18)),vec(1.1,1,1.1),Base:toWorld(ang(0,90,0)),FrameColor,"models/bogies/bogie_clyde_hiad_tp3.mdl")
+holoCreate(A,Base:toWorld(vec(0,9,18)),vec(1.1,1,1.1),Base:toWorld(ang(0,90,0)),FrameColor,"models/bogies/bogie_clyde_hiad_phx.mdl")
 holoParent(A,Base)
 holoEntity(A):setSubMaterial(1,FrameMat)  
 holoBodygroup(A,1,1)
@@ -45,7 +45,7 @@ holoClipEnabled(A,2,1)
 holoClip(A,2,vec(0,-24,0),vec(0,-1,0),0)
 
 A++
-holoCreate(A,Base:toWorld(vec(0,0,18)),vec(5,1,1.1),Base:toWorld(ang(0,90,0)),FrameColor,"models/bogies/bogie_clyde_hiad_tp3.mdl")
+holoCreate(A,Base:toWorld(vec(0,0,18)),vec(5,1,1.1),Base:toWorld(ang(0,90,0)),FrameColor,"models/bogies/bogie_clyde_hiad_phx.mdl")
 holoParent(A,Base)
 holoEntity(A):setSubMaterial(1,FrameMat)
 holoBodygroup(A,1,1)
@@ -59,7 +59,7 @@ holoClipEnabled(A,3,1)
 holoClip(A,3,vec(0,-24,0),vec(0,-1,0),0)
 
 A++
-holoCreate(A,Base:toWorld(vec(0,-9,18)),vec(1.1,1,1.1),Base:toWorld(ang(0,-90,0)),FrameColor,"models/bogies/bogie_clyde_hiad_tp3.mdl")
+holoCreate(A,Base:toWorld(vec(0,-9,18)),vec(1.1,1,1.1),Base:toWorld(ang(0,-90,0)),FrameColor,"models/bogies/bogie_clyde_hiad_phx.mdl")
 holoParent(A,Base)
 holoEntity(A):setSubMaterial(1,FrameMat)  
 holoBodygroup(A,1,1)
@@ -71,7 +71,7 @@ holoClipEnabled(A,2,1)
 holoClip(A,2,vec(0,-24,0),vec(0,-1,0),0)
 
 A++
-holoCreate(A,Base:toWorld(vec(0,9,18)),vec(1.1,1,1.1),Base:toWorld(ang(0,90,0)),FrameColor,"models/bogies/bogie_clyde_hiad_tp3.mdl")
+holoCreate(A,Base:toWorld(vec(0,9,18)),vec(1.1,1,1.1),Base:toWorld(ang(0,90,0)),FrameColor,"models/bogies/bogie_clyde_hiad_phx.mdl")
 holoParent(A,Base)
 holoEntity(A):setSubMaterial(1,FrameMat)  
 holoBodygroup(A,1,1)
@@ -83,7 +83,7 @@ holoClipEnabled(A,2,1)
 holoClip(A,2,vec(0,24,0),vec(0,1,0),0)
 
 A++
-holoCreate(A,Base:toWorld(vec(0,0,18)),vec(5,1,1.1),Base:toWorld(ang(0,90,0)),FrameColor,"models/bogies/bogie_clyde_hiad_tp3.mdl")
+holoCreate(A,Base:toWorld(vec(0,0,18)),vec(5,1,1.1),Base:toWorld(ang(0,90,0)),FrameColor,"models/bogies/bogie_clyde_hiad_phx.mdl")
 holoParent(A,Base)
 holoEntity(A):setSubMaterial(1,FrameMat)
 holoBodygroup(A,1,1)
@@ -111,36 +111,36 @@ holoBodygroup(A,6,1)
 holoAlpha(A,255)
 
 A++
-holoCreate(A,Base:toWorld(vec(0,0,-6)),vec(1),Base:toWorld(ang(0,0,0)),FrameColor,"models/sprops/cuboids/height24/size_2/cube_36x48x24.mdl")
+holoCreate(A,Base:toWorld(vec(0,0,-6)),vec(1.459,1,1),Base:toWorld(ang(0,0,0)),FrameColor,"models/sprops/cuboids/height24/size_2/cube_36x48x24.mdl")
 holoParent(A,Base)
 holoEntity(A):setSubMaterial(1,FrameMat)  
 holoAlpha(A,255)
 
 A++
-holoCreate(A,Base:toWorld(vec(27,0,-6)),vec(2,1,0.5),Base:toWorld(ang(90,0,0)),FrameColor,"models/sprops/prisms/tri/size_3/tprism_12x36.mdl")
+holoCreate(A,Base:toWorld(vec(38,0,-6)),vec(2,1,0.5),Base:toWorld(ang(90,0,0)),FrameColor,"models/sprops/prisms/tri/size_3/tprism_12x36.mdl")
 holoParent(A,Base)
 holoEntity(A):setSubMaterial(1,FrameMat)  
 holoAlpha(A,255)
 
 A++
-holoCreate(A,Base:toWorld(vec(-27,0,-6)),vec(2,1,0.5),Base:toWorld(ang(90,180,0)),FrameColor,"models/sprops/prisms/tri/size_3/tprism_12x36.mdl")
+holoCreate(A,Base:toWorld(vec(-38,0,-6)),vec(2,1,0.5),Base:toWorld(ang(90,180,0)),FrameColor,"models/sprops/prisms/tri/size_3/tprism_12x36.mdl")
 holoParent(A,Base)
 holoEntity(A):setSubMaterial(1,FrameMat)  
 holoAlpha(A,255)
 
 A++
-holoCreate(A,Base:toWorld(vec(0,0,6)),vec(0.9811,0.8,0.7),Base:toWorld(ang(0,0,0)),FrameColor,"models/sprops/cuboids/height12/size_4/cube_48x84x12.mdl")
+holoCreate(A,Base:toWorld(vec(0,0,6)),vec(1.2293,0.8,0.7),Base:toWorld(ang(0,0,0)),FrameColor,"models/sprops/cuboids/height12/size_4/cube_48x84x12.mdl")
 holoParent(A,Base)
 holoEntity(A):setSubMaterial(1,FrameMat)  
 holoAlpha(A,255)
 if(Wheels>0){
 A++
-holoCreate(A,Base:toWorld(vec(0,50,-1)),vec(1,1,1),Base:toWorld(ang(0,0,0)),vec(255),"models/anytrains/props/locoparts/axle_40_rsg.mdl")
+holoCreate(A,Base:toWorld(vec(0,50,-1)),vec(1,1,1),Base:toWorld(ang(0,0,0)),vec(255),"models/anytrains/props/locoparts/axle_40_phx.mdl")
 holoParent(A,Base)
 holoAlpha(A,255)
 
 A++
-holoCreate(A,Base:toWorld(vec(0,-50,-1)),vec(1,1,1),Base:toWorld(ang(0,0,0)),vec(255),"models/anytrains/props/locoparts/axle_40_rsg.mdl")
+holoCreate(A,Base:toWorld(vec(0,-50,-1)),vec(1,1,1),Base:toWorld(ang(0,0,0)),vec(255),"models/anytrains/props/locoparts/axle_40_phx.mdl")
 holoParent(A,Base)
 holoAlpha(A,255)
 }
