@@ -1,0 +1,220 @@
+@name HTC (42in, E2M)
+@model models/lazpack/trucks/commonwealth_a1a_long.mdl
+@persist A E:entity FrameMat:string FrameColor:vector
+
+#by doge (the baldwin one)
+#The HTC was EMD's replacement for the Flexicoil truck, which was very similar structurally to the Flexicoil. It was in use from the -2 line to the SD60.
+#This is the standard version.
+
+#Modified for E2 Mesh and 42in wheels by kei / kiero
+
+if(first()|dupefinished()){
+    
+FrameMat = "models/proppertextures/enamel_black" #Side frame texture.
+FrameColor = vec(255) #Side frame color.
+
+Wheels = 1 #Turns wheel holos off/on.
+    
+E = entity()
+A = 0
+E:setAlpha(0)
+noCollideAll(entity(),0)
+
+if(Wheels>0){    
+A++
+holoCreate(A,E:toWorld(vec(0,0,-22.5)),vec(1,(42/40),(42/40)),E:toWorld(ang(0,0,0)),FrameColor,"models/anytrains/props/locoparts/axle_40_rsg.mdl")
+holoParent(A,E)
+holoBodygroup(A,1,1)
+
+A++
+holoCreate(A,E:toWorld(vec(0,-84,-22.5)),vec(1,(42/40),(42/40)),E:toWorld(ang(0,0,0)),FrameColor,"models/anytrains/props/locoparts/axle_40_rsg.mdl")
+holoParent(A,E)
+holoBodygroup(A,1,1)
+
+A++
+holoCreate(A,E:toWorld(vec(0,84,-22.5)),vec(1,(42/40),(42/40)),E:toWorld(ang(0,0,0)),FrameColor,"models/anytrains/props/locoparts/axle_40_rsg.mdl")
+holoParent(A,E)
+holoBodygroup(A,1,1)
+}
+A++
+holoCreate(A,E:toWorld(vec(0,-84,-22.5)),vec(1,1.05,1.05),E:toWorld(ang(0,180,0)),FrameColor,"models/lazpack/detail/tractionmotorkit.mdl")
+holoParent(A,E)
+holoEntity(A):setSubMaterial(3,"models/proppertextures/invisible")
+holoBodygroup(A,0,1)
+
+A++
+holoCreate(A,E:toWorld(vec(0,0,-22.5)),vec(1,1.05,1.05),E:toWorld(ang(0,180,0)),FrameColor,"models/lazpack/detail/tractionmotorkit.mdl")
+holoParent(A,E)
+holoEntity(A):setSubMaterial(3,"models/proppertextures/invisible")
+holoBodygroup(A,0,1)
+
+A++
+holoCreate(A,E:toWorld(vec(0,84,-22.5)),vec(1,1.05,1.05),E:toWorld(ang(0,180,0)),FrameColor,"models/lazpack/detail/tractionmotorkit.mdl")
+holoParent(A,E)
+holoEntity(A):setSubMaterial(3,"models/proppertextures/invisible")
+holoBodygroup(A,0,1)
+holoClipEnabled(A,1,1)
+holoClip(A,1,vec(0,-35,0),vec(0,1,0),0)
+
+#Sideframe Side A
+A++
+holoCreate(A,E:toWorld(vec(-12,0,-47)),vec(1,1,1),E:toWorld(ang(0,0,0)),FrameColor,"models/jazzie/trains/locomotives/emd/emd_flexicoil_c_1.mdl")
+holoParent(A,E)
+holoClipEnabled(A,1,1)
+holoClip(A,1,vec(0,0,0),vec(1,0,0),0)
+holoEntity(A):setSubMaterial(1,"models/proppertextures/invisible")
+holoEntity(A):setSubMaterial(2,"models/proppertextures/invisible")
+holoEntity(A):setSubMaterial(3,"models/proppertextures/invisible")
+holoEntity(A):setSubMaterial(4,"models/proppertextures/invisible")
+holoEntity(A):setSubMaterial(5,FrameMat)
+holoEntity(A):setSubMaterial(6,"models/proppertextures/invisible")
+holoEntity(A):setSubMaterial(7,"models/proppertextures/invisible")
+holoEntity(A):setSubMaterial(8,"models/proppertextures/invisible")
+
+A++
+holoCreate(A,E:toWorld(vec(-12,0,-47)),vec(1,1,1),E:toWorld(ang(0,0,0)),FrameColor,"models/jazzie/trains/locomotives/emd/emd_flexicoil_c_1.mdl")
+holoParent(A,E)
+holoClipEnabled(A,1,1)
+holoClip(A,1,vec(57,0,0),vec(1,0,0),0)
+holoEntity(A):setSubMaterial(1,"models/proppertextures/invisible")
+holoEntity(A):setSubMaterial(2,"models/proppertextures/invisible")
+holoEntity(A):setSubMaterial(3,"models/proppertextures/black_flat")
+holoEntity(A):setSubMaterial(4,"models/proppertextures/invisible")
+holoEntity(A):setSubMaterial(5,"models/proppertextures/invisible")
+holoEntity(A):setSubMaterial(6,"models/proppertextures/invisible")
+holoEntity(A):setSubMaterial(7,"models/proppertextures/invisible")
+holoEntity(A):setSubMaterial(8,"models/proppertextures/invisible")
+
+
+#Sideframe Side B
+A++
+holoCreate(A,E:toWorld(vec(12,0,-47)),vec(1,1,1),E:toWorld(ang(0,0,0)),FrameColor,"models/jazzie/trains/locomotives/emd/emd_flexicoil_c_1.mdl")
+holoParent(A,E)
+holoClipEnabled(A,1,1)
+holoClip(A,1,vec(0,0,0),vec(-1,0,0),0)
+holoEntity(A):setSubMaterial(1,"models/proppertextures/invisible")
+holoEntity(A):setSubMaterial(2,"models/proppertextures/invisible")
+holoEntity(A):setSubMaterial(3,"models/proppertextures/invisible")
+holoEntity(A):setSubMaterial(4,"models/proppertextures/invisible")
+holoEntity(A):setSubMaterial(5,FrameMat)
+holoEntity(A):setSubMaterial(6,"models/proppertextures/invisible")
+holoEntity(A):setSubMaterial(7,"models/proppertextures/invisible")
+holoEntity(A):setSubMaterial(8,"models/proppertextures/invisible")
+
+A++
+holoCreate(A,E:toWorld(vec(12,0,-47)),vec(1,1,1),E:toWorld(ang(0,0,0)),FrameColor,"models/jazzie/trains/locomotives/emd/emd_flexicoil_c_1.mdl")
+holoParent(A,E)
+holoClipEnabled(A,1,1)
+holoClip(A,1,vec(-57,0,0),vec(-1,0,0),0)
+holoEntity(A):setSubMaterial(1,"models/proppertextures/invisible")
+holoEntity(A):setSubMaterial(2,"models/proppertextures/invisible")
+holoEntity(A):setSubMaterial(3,"models/proppertextures/black_flat")
+holoEntity(A):setSubMaterial(4,"models/proppertextures/invisible")
+holoEntity(A):setSubMaterial(5,"models/proppertextures/invisible")
+holoEntity(A):setSubMaterial(6,"models/proppertextures/invisible")
+holoEntity(A):setSubMaterial(7,"models/proppertextures/invisible")
+holoEntity(A):setSubMaterial(8,"models/proppertextures/invisible")
+
+#Truck mount point
+
+A++
+holoCreate(A,E:toWorld(vec(0,0,-4.5)),vec(1.25),E:toWorld(ang(0,0,0)),FrameColor,"cplane")
+holoParent(A,E)
+holoEntity(A):setSubMaterial(1,"models/proppertextures/grid_b")
+
+#E2M FrameMat
+
+P1 = p2mCreate(E:toWorld(vec(0,0,1)),E:angles(),0,1)
+P1:p2mSetParent(E)
+#Bearings and associated details (Hyatt bearings)
+P1:p2mPushModel("models/props_bennjo/base_1c.mdl",vec(47,84,-23.5),ang(0,90,0),vec(1),0,0)
+P1:p2mPushModel("models/holograms/hq_tube.mdl",vec(46,84,-23.5),ang(90,0,0),vec(0.5),0,0)
+P1:p2mPushModel("models/props_bennjo/base_1c.mdl",vec(-47,84,-23.5),ang(0,-90,0),vec(1),0,0)
+P1:p2mPushModel("models/holograms/hq_tube.mdl",vec(-46,84,-23.5),ang(90,0,0),vec(0.5),0,0)
+P1:p2mPushModel("models/props_bennjo/base_1c.mdl",vec(47,0,-23.5),ang(0,90,0),vec(1),0,0)
+P1:p2mPushModel("models/holograms/hq_tube.mdl",vec(46,0,-23.5),ang(90,0,0),vec(0.5),0,0)
+P1:p2mPushModel("models/props_bennjo/base_1c.mdl",vec(-47,0,-23.5),ang(0,-90,0),vec(1),0,0)
+P1:p2mPushModel("models/holograms/hq_tube.mdl",vec(-46,0,-23.5),ang(90,0,0),vec(0.5),0,0)
+P1:p2mPushModel("models/props_bennjo/base_1c.mdl",vec(47,-84,-23.5),ang(0,90,0),vec(1),0,0)
+P1:p2mPushModel("models/holograms/hq_tube.mdl",vec(46,-84,-23.5),ang(90,0,0),vec(0.5),0,0)
+P1:p2mPushModel("models/props_bennjo/base_1c.mdl",vec(-47,-84,-23.5),ang(0,-90,0),vec(1),0,0)
+P1:p2mPushModel("models/holograms/hq_tube.mdl",vec(-46,-84,-23.5),ang(90,0,0),vec(0.5),0,0)
+#Top Plate/Truck Attaching Point
+P1:p2mPushModel("models/holograms/cube.mdl",vec(-32,42,-9.5),ang(0,0,0),vec(1,2,0.25),0,0)
+P1:p2mPushModel("models/holograms/cube.mdl",vec(32,42,-9.5),ang(0,0,0),vec(1,2,0.25),0,0)
+P1:p2mPushModel("models/holograms/cube.mdl",vec(-32,-42,-9.5),ang(0,0,0),vec(1,2,0.25),0,0)
+P1:p2mPushModel("models/holograms/cube.mdl",vec(32,-42,-9.5),ang(0,0,0),vec(1,2,0.25),0,0)
+P1:p2mPushModel("models/unionslocos/parts/brake_kit_1e.mdl",vec(0,-42,-3.5),ang(0,90,0),vec(5,3,3),0,0)
+P1:p2mPushModel("models/unionslocos/parts/brake_kit_1e.mdl",vec(0,42,-3.5),ang(0,90,0),vec(5,3,3),0,0)
+P1:p2mPushModel("models/holograms/cube.mdl",vec(0,0,-7.5),ang(0,0,0),vec(1.75,7,0.3175),0,0)
+P1:p2mPushModel("models/holograms/hq_tube_thin.mdl",vec(0,0,-5.5),ang(0,0,0),vec(1.3,1.3,0.25),0,0)
+#Brake Gear
+P1:p2mPushModel("models/unionslocos/parts/brake_kit_1a.mdl",vec(50,84,-5),ang(0,0,0),vec(0.8,0.8,0.9),0,0)
+P1:p2mPushModel("models/unionslocos/parts/brake_kit_1b.mdl",vec(50,72,-5),ang(90,0,0),vec(0.8,0.5,0.9),0,0)
+P1:p2mPushModel("models/unionslocos/parts/brake_kit_1c.mdl",vec(39,59,-5),ang(0,180,-90),vec(1,0.9,0.5),0,0)
+P1:p2mPushModel("models/holograms/hq_cylinder.mdl",vec(41,59,-6),ang(0,0,0),vec(0.4),0,0)
+P1:p2mPushModel("models/unionslocos/parts/brake_kit_1d.mdl",vec(29.6,58,-8),ang(0,0,0),vec(1,0.8,1.1),0,0)
+P1:p2mPushModel("models/unionslocos/parts/brake_kit_1a.mdl",vec(50,-84,-5),ang(0,180,0),vec(0.8,0.8,0.9),0,0)
+P1:p2mPushModel("models/unionslocos/parts/brake_kit_1b.mdl",vec(50,-72,-5),ang(90,180,0),vec(0.8,0.5,0.9),0,0)
+P1:p2mPushModel("models/unionslocos/parts/brake_kit_1c.mdl",vec(39,-59,-5),ang(0,180,90),vec(1,0.9,0.5),0,0)
+P1:p2mPushModel("models/holograms/hq_cylinder.mdl",vec(41,-59,-6),ang(0,0,0),vec(0.4),0,0)
+P1:p2mPushModel("models/unionslocos/parts/brake_kit_1d.mdl",vec(29.6,-58,-8),ang(0,180,0),vec(1,0.8,1.1),0,0)
+P1:p2mPushModel("models/unionslocos/parts/brake_kit_1a.mdl",vec(-50,84,-5),ang(0,0,0),vec(0.8,0.8,0.9),0,0)
+P1:p2mPushModel("models/unionslocos/parts/brake_kit_1b.mdl",vec(-50,72,-5),ang(90,0,0),vec(0.8,0.5,0.9),0,0)
+P1:p2mPushModel("models/unionslocos/parts/brake_kit_1c.mdl",vec(-39,59,-5),ang(0,180,-90),vec(1,0.9,0.5),0,0)
+P1:p2mPushModel("models/holograms/hq_cylinder.mdl",vec(-41,59,-6),ang(0,0,0),vec(0.4),0,0)
+P1:p2mPushModel("models/unionslocos/parts/brake_kit_1d.mdl",vec(-29.6,58,-8),ang(0,0,0),vec(1,0.8,1.1),0,0)
+P1:p2mPushModel("models/unionslocos/parts/brake_kit_1e.mdl",vec(-29.6,42.5,-38),ang(0,0,0),vec(1,1.15,1),0,0)
+P1:p2mPushModel("models/unionslocos/parts/brake_kit_1e.mdl",vec(29.6,42.5,-38),ang(0,0,0),vec(1,1.15,1),0,0)
+P1:p2mPushModel("models/unionslocos/parts/brake_kit_1e.mdl",vec(-29.6,-42.5,-36),ang(0,0,10),vec(1,1.15,1),0,0)
+P1:p2mPushModel("models/unionslocos/parts/brake_kit_1e.mdl",vec(29.6,-42.5,-36),ang(0,0,10),vec(1,1.15,1),0,0)
+P1:p2mPushModel("models/unionslocos/parts/brake_kit_1d.mdl",vec(-29.6,-26,-8),ang(0,0,-3),vec(1,0.8,0.9),0,0)
+P1:p2mPushModel("models/unionslocos/parts/brake_kit_1f.mdl",vec(-29.6,25.8,-8),ang(0,0,0),vec(1,0.8,1.1),0,0)
+P1:p2mPushModel("models/unionslocos/parts/brake_kit_1d.mdl",vec(29.6,-26,-8),ang(0,0,-3),vec(1,0.8,0.9),0,0)
+P1:p2mPushModel("models/unionslocos/parts/brake_kit_1f.mdl",vec(29.6,25.8,-8),ang(0,0,0),vec(1,0.8,1.1),0,0)
+P1:p2mPushModel("models/holograms/cylinder.mdl",vec(-42,0,-26),ang(0,0,90),vec(0.2,0.2,14),0,0)
+P1:p2mPushModel("models/holograms/cylinder.mdl",vec(42,0,-26),ang(0,0,90),vec(0.2,0.2,14),0,0)
+P1:p2mPushModel("models/unionslocos/parts/brake_kit_1a.mdl",vec(-50,-84,-4),ang(0,180,0),vec(0.8,0.8,0.9),0,0)
+P1:p2mPushModel("models/unionslocos/parts/brake_kit_1b.mdl",vec(-50,-72,-5),ang(90,180,0),vec(0.8,0.5,0.9),0,0)
+P1:p2mPushModel("models/unionslocos/parts/brake_kit_1c.mdl",vec(-39,-59,-5),ang(0,180,90),vec(1,0.9,0.5),0,0)
+P1:p2mPushModel("models/holograms/hq_cylinder.mdl",vec(-41,-59,-6),ang(0,0,0),vec(0.4),0,0)
+P1:p2mPushModel("models/unionslocos/parts/brake_kit_1d.mdl",vec(-29.6,-58,-8),ang(0,180,0),vec(1,0.8,1.1),0,0)
+P1:p2mPushModel("models/holograms/hq_tube.mdl",vec(-25,101,-10),ang(0,180,0),vec(3.2,3.2,0.85),0,0,array(vec(0,0,0),vec(1,0,0),vec(0,4,0),vec(0,-1,0)))
+P1:p2mPushModel("models/holograms/hq_tube.mdl",vec(25,101,-10),ang(0,180,0),vec(3.2,3.2,0.85),0,0,array(vec(0,0,0),vec(-1,0,0),vec(0,4,0),vec(0,-1,0)))
+P1:p2mPushModel("models/holograms/cube.mdl",vec(0,117.83,-10),ang(0,180,0),vec(4.2,0.4,0.85),0,0)
+P1:p2mPushModel("models/holograms/cube.mdl",vec(0,117.83,-18),ang(0,180,0),vec(2.2,0.4,1.85),0,0)
+P1:p2mPushModel("models/unionslocos/parts/brake_kit_1e.mdl",vec(48,0,-13),ang(0,90,82),vec(1,0.9,1),0,0)
+P1:p2mPushModel("models/unionslocos/parts/brake_kit_1e.mdl",vec(-48,0,-13),ang(0,90,98),vec(1,0.9,1),0,0)
+
+P1:p2mBuild()
+P1:p2mSetColor(FrameColor)
+P1:p2mSetMaterial(FrameMat)
+
+#E2M models/proppertextures/black_flat
+
+P2 = p2mCreate(E:pos(),E:angles(),0,1)
+P2:p2mSetParent(E)
+#Bearings and associated details (Hyatt bearings)
+P2:p2mPushModel("models/bobsters_trains/uk/bogies/class20_mechanical/spring.mdl",vec(40,88,-12),ang(0,0,0),vec(1,1,0.5),0,0)
+P2:p2mPushModel("models/bobsters_trains/uk/bogies/class20_mechanical/spring.mdl",vec(40,80,-12),ang(0,0,0),vec(1,1,0.5),0,0)
+P2:p2mPushModel("models/bobsters_trains/uk/bogies/class20_mechanical/spring.mdl",vec(-40,88,-12),ang(0,0,0),vec(1,1,0.5),0,0)
+P2:p2mPushModel("models/bobsters_trains/uk/bogies/class20_mechanical/spring.mdl",vec(-40,80,-12),ang(0,0,0),vec(1,1,0.5),0,0)
+P2:p2mPushModel("models/bobsters_trains/uk/bogies/class20_mechanical/spring.mdl",vec(40,4,-12),ang(0,0,0),vec(1,1,0.5),0,0)
+P2:p2mPushModel("models/bobsters_trains/uk/bogies/class20_mechanical/spring.mdl",vec(40,-4,-12),ang(0,0,0),vec(1,1,0.5),0,0)
+P2:p2mPushModel("models/bobsters_trains/uk/bogies/class20_mechanical/spring.mdl",vec(-40,4,-12),ang(0,0,0),vec(1,1,0.5),0,0)
+P2:p2mPushModel("models/bobsters_trains/uk/bogies/class20_mechanical/spring.mdl",vec(-40,-4,-12),ang(0,0,0),vec(1,1,0.5),0,0)
+P2:p2mPushModel("models/bobsters_trains/uk/bogies/class20_mechanical/spring.mdl",vec(40,-88,-12),ang(0,0,0),vec(1,1,0.5),0,0)
+P2:p2mPushModel("models/bobsters_trains/uk/bogies/class20_mechanical/spring.mdl",vec(40,-80,-12),ang(0,0,0),vec(1,1,0.5),0,0)
+P2:p2mPushModel("models/bobsters_trains/uk/bogies/class20_mechanical/spring.mdl",vec(-40,-88,-12),ang(0,0,0),vec(1,1,0.5),0,0)
+P2:p2mPushModel("models/bobsters_trains/uk/bogies/class20_mechanical/spring.mdl",vec(-40,-80,-12),ang(0,0,0),vec(1,1,0.5),0,0)
+#Top Plate/Truck Attaching Point
+P2:p2mPushModel("models/bobsters_trains/uk/bogies/class20_mechanical/spring.mdl",vec(30.5,-42,-4),ang(0,0,0),vec(1,1,0.5),0,0)
+P2:p2mPushModel("models/bobsters_trains/uk/bogies/class20_mechanical/spring.mdl",vec(30.5,42,-4),ang(0,0,0),vec(1,1,0.5),0,0)
+P2:p2mPushModel("models/bobsters_trains/uk/bogies/class20_mechanical/spring.mdl",vec(-30.5,-42,-4),ang(0,0,0),vec(1,1,0.5),0,0)
+P2:p2mPushModel("models/bobsters_trains/uk/bogies/class20_mechanical/spring.mdl",vec(-30.5,42,-4),ang(0,0,0),vec(1,1,0.5),0,0)
+
+P2:p2mBuild()
+P2:p2mSetColor(FrameColor)
+P2:p2mSetMaterial("models/proppertextures/black_flat")
+
+}
